@@ -1,0 +1,399 @@
+model,precision,environment,task_id,outcome,turns,self_corrections,archetypes,reasoning_leakage,stagnation,truncation,verification_omission
+Gemma-3,8-bit,Python,py_1,judge_rejected,1,0,truncation(1),0,0,1,0
+Gemma-3,8-bit,Python,py_2,judge_rejected,1,0,truncation(1),0,0,1,0
+Gemma-3,8-bit,Python,py_3,success,1,0,truncation(1),0,0,1,0
+Gemma-3,8-bit,Python,py_4,success,3,1,truncation(4),0,0,1,0
+Gemma-3,8-bit,Python,py_5,success,1,0,truncation(1),0,0,1,0
+Gemma-3,8-bit,Python,py_6,success,1,0,truncation(1),0,0,1,0
+Gemma-3,8-bit,Python,py_7,judge_rejected,2,0,truncation(3),0,0,1,0
+Gemma-3,8-bit,Python,py_8,max_turns,5,0,stagnation(1); truncation(4),0,1,1,0
+Gemma-3,8-bit,Python,py_9,success,1,0,truncation(1),0,0,1,0
+Gemma-3,8-bit,Python,py_10,judge_rejected,1,0,truncation(1),0,0,1,0
+Gemma-3,8-bit,Python,py_11,success,1,0,truncation(1),0,0,1,0
+Gemma-3,8-bit,Python,py_12,success,1,0,truncation(1),0,0,1,0
+Gemma-3,8-bit,Python,py_13,success,1,0,truncation(1),0,0,1,0
+Gemma-3,8-bit,Python,py_14,success,1,0,truncation(1),0,0,1,0
+Gemma-3,8-bit,Python,py_15,judge_rejected,1,0,truncation(1),0,0,1,0
+Gemma-3,8-bit,Python,py_16,success,1,0,truncation(1),0,0,1,0
+Gemma-3,8-bit,Python,py_17,success,2,0,truncation(2),0,0,1,0
+Gemma-3,8-bit,Python,py_18,success,1,1,none,0,0,0,0
+Gemma-3,8-bit,Python,py_19,success,1,0,truncation(1),0,0,1,0
+Gemma-3,8-bit,Python,py_20,success,2,0,truncation(2),0,0,1,0
+Gemma-3,8-bit,Bash,bash_1,max_turns,5,2,none,0,0,0,0
+Gemma-3,8-bit,Bash,bash_2,success,5,0,none,0,0,0,0
+Gemma-3,8-bit,Bash,bash_3,max_turns,5,0,none,0,0,0,0
+Gemma-3,8-bit,Bash,bash_4,max_turns,5,1,none,0,0,0,0
+Gemma-3,8-bit,Bash,bash_5,success,3,0,truncation(1),0,0,1,0
+Gemma-3,8-bit,Bash,bash_6,max_turns,5,0,stagnation(1),0,1,0,0
+Gemma-3,8-bit,Bash,bash_7,max_turns,5,1,none,0,0,0,0
+Gemma-3,8-bit,Bash,bash_8,max_turns,5,0,none,0,0,0,0
+Gemma-3,8-bit,Bash,bash_9,judge_rejected,4,0,stagnation(1); truncation(1),0,1,1,0
+Gemma-3,8-bit,Bash,bash_10,max_turns,5,3,none,0,0,0,0
+Gemma-3,8-bit,Bash,bash_11,judge_rejected,3,0,truncation(1),0,0,1,0
+Gemma-3,8-bit,Bash,bash_12,max_turns,5,0,none,0,0,0,0
+Gemma-3,8-bit,Bash,bash_13,max_turns,5,1,stagnation(1),0,1,0,0
+Gemma-3,8-bit,Bash,bash_14,max_turns,5,0,none,0,0,0,0
+Gemma-3,8-bit,Bash,bash_15,judge_rejected,3,0,truncation(1),0,0,1,0
+Gemma-3,8-bit,Bash,bash_16,max_turns,5,0,none,0,0,0,0
+Gemma-3,8-bit,Bash,bash_17,judge_rejected,5,0,stagnation(1); truncation(1),0,1,1,0
+Gemma-3,8-bit,Bash,bash_18,max_turns,5,0,none,0,0,0,0
+Gemma-3,8-bit,Bash,bash_19,judge_rejected,3,0,truncation(1),0,0,1,0
+Gemma-3,8-bit,Bash,bash_20,max_turns,5,0,none,0,0,0,0
+Llama-3.1,4-bit,Bash,bash_1,max_turns,5,5,none,0,0,0,0
+Llama-3.1,4-bit,Bash,bash_2,max_turns,5,3,stagnation(1),0,1,0,0
+Llama-3.1,4-bit,Bash,bash_3,max_turns,5,5,none,0,0,0,0
+Llama-3.1,4-bit,Bash,bash_4,max_turns,5,5,none,0,0,0,0
+Llama-3.1,4-bit,Bash,bash_5,max_turns,5,4,none,0,0,0,0
+Llama-3.1,4-bit,Bash,bash_6,max_turns,5,5,none,0,0,0,0
+Llama-3.1,4-bit,Bash,bash_7,max_turns,5,3,none,0,0,0,0
+Llama-3.1,4-bit,Bash,bash_8,max_turns,5,5,stagnation(1),0,1,0,0
+Llama-3.1,4-bit,Bash,bash_9,unknown,4,4,none,0,0,0,0
+Llama-3.1,4-bit,Bash,bash_10,max_turns,5,5,none,0,0,0,0
+Llama-3.1,4-bit,Bash,bash_11,max_turns,5,4,none,0,0,0,0
+Llama-3.1,4-bit,Bash,bash_12,max_turns,5,5,none,0,0,0,0
+Llama-3.1,4-bit,Bash,bash_13,max_turns,5,5,none,0,0,0,0
+Llama-3.1,4-bit,Bash,bash_14,unknown,5,4,none,0,0,0,0
+Llama-3.1,4-bit,Bash,bash_15,max_turns,5,5,none,0,0,0,0
+Llama-3.1,4-bit,Bash,bash_16,max_turns,5,5,none,0,0,0,0
+Llama-3.1,4-bit,Bash,bash_17,max_turns,5,5,none,0,0,0,0
+Llama-3.1,4-bit,Bash,bash_18,max_turns,5,4,none,0,0,0,0
+Llama-3.1,4-bit,Bash,bash_19,max_turns,5,5,none,0,0,0,0
+Llama-3.1,4-bit,Bash,bash_20,max_turns,5,4,none,0,0,0,0
+Llama-3.1,4-bit,Python,py_2,max_turns,5,5,stagnation(1),0,1,0,0
+Llama-3.1,4-bit,Python,py_3,max_turns,5,4,stagnation(1); truncation(1),0,1,1,0
+Llama-3.1,4-bit,Python,py_4,max_turns,5,5,stagnation(1); truncation(1),0,1,1,0
+Llama-3.1,4-bit,Python,py_5,max_turns,5,3,stagnation(1); truncation(1),0,1,1,0
+Llama-3.1,4-bit,Python,py_6,max_turns,5,4,stagnation(1); truncation(1),0,1,1,0
+Llama-3.1,4-bit,Python,py_7,max_turns,5,5,stagnation(1),0,1,0,0
+Llama-3.1,4-bit,Python,py_8,max_turns,5,5,stagnation(1),0,1,0,0
+Llama-3.1,4-bit,Python,py_9,unknown,5,5,stagnation(1),0,1,0,0
+Llama-3.1,4-bit,Python,py_10,max_turns,5,4,stagnation(1); truncation(1),0,1,1,0
+Llama-3.1,4-bit,Python,py_11,max_turns,5,5,stagnation(1),0,1,0,0
+Llama-3.1,4-bit,Python,py_12,max_turns,5,4,stagnation(1); truncation(1),0,1,1,0
+Llama-3.1,4-bit,Python,py_13,max_turns,5,4,stagnation(1),0,1,0,0
+Llama-3.1,4-bit,Python,py_14,max_turns,5,5,stagnation(1),0,1,0,0
+Llama-3.1,4-bit,Python,py_15,max_turns,5,4,stagnation(1),0,1,0,0
+Llama-3.1,4-bit,Python,py_16,max_turns,5,5,stagnation(1); truncation(1),0,1,1,0
+Llama-3.1,4-bit,Python,py_17,max_turns,5,3,stagnation(1),0,1,0,0
+Llama-3.1,4-bit,Python,py_18,max_turns,5,5,stagnation(1),0,1,0,0
+Llama-3.1,4-bit,Python,py_19,max_turns,5,5,stagnation(1),0,1,0,0
+Llama-3.1,4-bit,Python,py_20,max_turns,5,5,stagnation(1),0,1,0,0
+Llama-3.1,4-bit,Web,web_1,unknown,5,2,stagnation(1),0,1,0,0
+Llama-3.1,4-bit,Web,web_2,judge_rejected,5,2,stagnation(1); truncation(1),0,1,1,0
+Llama-3.1,4-bit,Web,web_3,unknown,5,2,stagnation(1),0,1,0,0
+Llama-3.1,4-bit,Web,web_4,unknown,5,1,stagnation(1),0,1,0,0
+Llama-3.1,4-bit,Web,web_5,unknown,5,0,stagnation(1); truncation(1),0,1,1,0
+Llama-3.1,4-bit,Web,web_6,unknown,5,3,stagnation(1),0,1,0,0
+Llama-3.1,4-bit,Web,web_7,unknown,5,4,stagnation(1),0,1,0,0
+Llama-3.1,4-bit,Web,web_8,unknown,5,1,stagnation(1); truncation(1),0,1,1,0
+Llama-3.1,4-bit,Web,web_9,unknown,5,2,stagnation(1),0,1,0,0
+Llama-3.1,4-bit,Web,web_10,unknown,5,3,stagnation(1),0,1,0,0
+Llama-3.1,4-bit,Web,web_11,unknown,5,0,stagnation(1); truncation(1),0,1,1,0
+Llama-3.1,4-bit,Web,web_12,unknown,5,4,stagnation(1),0,1,0,0
+Llama-3.1,4-bit,Web,web_13,unknown,5,1,stagnation(1); truncation(1),0,1,1,0
+Llama-3.1,4-bit,Web,web_14,unknown,5,2,stagnation(1),0,1,0,0
+Llama-3.1,4-bit,Web,web_15,unknown,5,2,stagnation(1); truncation(1),0,1,1,0
+Llama-3.1,4-bit,Web,web_16,unknown,5,3,stagnation(1); truncation(1),0,1,1,0
+Llama-3.1,4-bit,Web,web_17,unknown,5,4,stagnation(1),0,1,0,0
+Llama-3.1,4-bit,Web,web_18,unknown,5,0,stagnation(1); truncation(1),0,1,1,0
+Llama-3.1,4-bit,Web,web_19,unknown,5,1,stagnation(1); truncation(1),0,1,1,0
+Llama-3.1,4-bit,Web,web_20,unknown,5,4,stagnation(1),0,1,0,0
+Llama-3.1,8-bit,Bash,bash_1,max_turns,5,4,none,0,0,0,0
+Llama-3.1,8-bit,Bash,bash_2,max_turns,5,4,none,0,0,0,0
+Llama-3.1,8-bit,Bash,bash_3,max_turns,5,4,none,0,0,0,0
+Llama-3.1,8-bit,Bash,bash_4,max_turns,5,4,none,0,0,0,0
+Llama-3.1,8-bit,Bash,bash_5,judge_rejected,2,0,truncation(1),0,0,1,0
+Llama-3.1,8-bit,Bash,bash_6,max_turns,5,4,none,0,0,0,0
+Llama-3.1,8-bit,Bash,bash_7,max_turns,5,5,none,0,0,0,0
+Llama-3.1,8-bit,Bash,bash_8,max_turns,5,5,none,0,0,0,0
+Llama-3.1,8-bit,Bash,bash_9,judge_rejected,2,1,truncation(1),0,0,1,0
+Llama-3.1,8-bit,Bash,bash_10,max_turns,5,4,none,0,0,0,0
+Llama-3.1,8-bit,Bash,bash_11,max_turns,5,4,reasoning_leakage(1),1,0,0,0
+Llama-3.1,8-bit,Bash,bash_12,max_turns,5,3,none,0,0,0,0
+Llama-3.1,8-bit,Bash,bash_13,judge_rejected,4,3,truncation(1),0,0,1,0
+Llama-3.1,8-bit,Bash,bash_14,max_turns,5,4,none,0,0,0,0
+Llama-3.1,8-bit,Bash,bash_15,max_turns,5,4,reasoning_leakage(1),1,0,0,0
+Llama-3.1,8-bit,Bash,bash_16,max_turns,5,5,none,0,0,0,0
+Llama-3.1,8-bit,Bash,bash_17,max_turns,5,4,none,0,0,0,0
+Llama-3.1,8-bit,Bash,bash_18,max_turns,5,4,none,0,0,0,0
+Llama-3.1,8-bit,Bash,bash_19,max_turns,5,3,reasoning_leakage(1),1,0,0,0
+Llama-3.1,8-bit,Bash,bash_20,max_turns,5,4,none,0,0,0,0
+Llama-3.1,8-bit,Python,py_1,max_turns,5,0,stagnation(1); truncation(5),0,1,1,0
+Llama-3.1,8-bit,Python,py_2,max_turns,5,5,stagnation(1); truncation(1),0,1,1,0
+Llama-3.1,8-bit,Python,py_3,max_turns,5,5,stagnation(1),0,1,0,0
+Llama-3.1,8-bit,Python,py_4,max_turns,5,4,stagnation(1); truncation(3),0,1,1,0
+Llama-3.1,8-bit,Python,py_5,max_turns,5,5,stagnation(1),0,1,0,0
+Llama-3.1,8-bit,Python,py_6,max_turns,5,5,stagnation(1),0,1,0,0
+Llama-3.1,8-bit,Python,py_7,max_turns,5,5,stagnation(1); truncation(1),0,1,1,0
+Llama-3.1,8-bit,Python,py_8,max_turns,5,4,stagnation(1); truncation(2),0,1,1,0
+Llama-3.1,8-bit,Python,py_9,max_turns,5,5,stagnation(1),0,1,0,0
+Llama-3.1,8-bit,Python,py_10,max_turns,5,5,stagnation(1),0,1,0,0
+Llama-3.1,8-bit,Python,py_11,max_turns,5,3,stagnation(1); truncation(2),0,1,1,0
+Llama-3.1,8-bit,Python,py_12,max_turns,5,5,stagnation(1),0,1,0,0
+Llama-3.1,8-bit,Python,py_13,max_turns,5,4,stagnation(1); truncation(1),0,1,1,0
+Llama-3.1,8-bit,Python,py_14,success,3,2,truncation(1),0,0,1,0
+Llama-3.1,8-bit,Python,py_15,max_turns,5,4,stagnation(1),0,1,0,0
+Llama-3.1,8-bit,Python,py_16,unknown,5,5,stagnation(1),0,1,0,0
+Llama-3.1,8-bit,Python,py_17,max_turns,5,5,stagnation(1),0,1,0,0
+Llama-3.1,8-bit,Python,py_18,success,5,4,stagnation(1); truncation(1),0,1,1,0
+Llama-3.1,8-bit,Python,py_19,max_turns,5,4,stagnation(1); truncation(1),0,1,1,0
+Llama-3.1,8-bit,Python,py_20,max_turns,5,3,stagnation(1),0,1,0,0
+Llama-3.1,8-bit,Web,web_1,unknown,4,0,stagnation(1); truncation(1),0,1,1,0
+Llama-3.1,8-bit,Web,web_2,judge_rejected,2,0,truncation(1),0,0,1,0
+Llama-3.1,8-bit,Web,web_3,unknown,5,2,stagnation(1),0,1,0,0
+Llama-3.1,8-bit,Web,web_4,unknown,5,1,stagnation(1); truncation(1),0,1,1,0
+Llama-3.1,8-bit,Web,web_5,unknown,5,2,stagnation(1),0,1,0,0
+Llama-3.1,8-bit,Web,web_6,unknown,5,1,stagnation(1); truncation(1),0,1,1,0
+Llama-3.1,8-bit,Web,web_7,unknown,5,1,stagnation(1); truncation(1),0,1,1,0
+Llama-3.1,8-bit,Web,web_8,unknown,5,2,stagnation(1); truncation(1),0,1,1,0
+Llama-3.1,8-bit,Web,web_9,unknown,5,0,stagnation(1); truncation(1),0,1,1,0
+Llama-3.1,8-bit,Web,web_10,unknown,5,0,stagnation(1); truncation(1),0,1,1,0
+Llama-3.1,8-bit,Web,web_11,unknown,5,0,stagnation(1); truncation(1),0,1,1,0
+Llama-3.1,8-bit,Web,web_12,unknown,5,2,stagnation(1),0,1,0,0
+Llama-3.1,8-bit,Web,web_13,unknown,5,3,stagnation(1),0,1,0,0
+Llama-3.1,8-bit,Web,web_14,unknown,5,2,stagnation(1); truncation(1),0,1,1,0
+Llama-3.1,8-bit,Web,web_15,unknown,5,0,stagnation(1); truncation(1),0,1,1,0
+Llama-3.1,8-bit,Web,web_16,unknown,5,2,stagnation(1),0,1,0,0
+Llama-3.1,8-bit,Web,web_17,judge_rejected,4,1,stagnation(1); truncation(1),0,1,1,0
+Llama-3.1,8-bit,Web,web_18,unknown,5,0,stagnation(1); truncation(1),0,1,1,0
+Llama-3.1,8-bit,Web,web_19,unknown,5,0,stagnation(1); truncation(1),0,1,1,0
+Llama-3.1,8-bit,Web,web_20,unknown,5,0,stagnation(1),0,1,0,0
+Phi-4-Mini,4-bit,Bash,bash_1,judge_rejected,1,1,none,0,0,0,0
+Phi-4-Mini,4-bit,Bash,bash_2,judge_rejected,4,0,stagnation(1); truncation(1),0,1,1,0
+Phi-4-Mini,4-bit,Bash,bash_3,judge_rejected,3,3,none,0,0,0,0
+Phi-4-Mini,4-bit,Bash,bash_4,max_turns,5,0,stagnation(1),0,1,0,0
+Phi-4-Mini,4-bit,Bash,bash_5,success,2,0,truncation(1),0,0,1,0
+Phi-4-Mini,4-bit,Bash,bash_6,judge_rejected,4,1,none,0,0,0,0
+Phi-4-Mini,4-bit,Bash,bash_7,max_turns,5,2,none,0,0,0,0
+Phi-4-Mini,4-bit,Bash,bash_8,judge_rejected,2,0,truncation(1),0,0,1,0
+Phi-4-Mini,4-bit,Bash,bash_9,judge_rejected,1,0,verification_omission(1),0,0,0,1
+Phi-4-Mini,4-bit,Bash,bash_10,judge_rejected,2,0,verification_omission(1),0,0,0,1
+Phi-4-Mini,4-bit,Bash,bash_11,judge_rejected,2,1,verification_omission(1),0,0,0,1
+Phi-4-Mini,4-bit,Bash,bash_12,judge_rejected,2,0,verification_omission(1),0,0,0,1
+Phi-4-Mini,4-bit,Bash,bash_13,judge_rejected,1,0,none,0,0,0,0
+Phi-4-Mini,4-bit,Bash,bash_14,judge_rejected,3,0,verification_omission(1),0,0,0,1
+Phi-4-Mini,4-bit,Bash,bash_15,judge_rejected,1,0,none,0,0,0,0
+Phi-4-Mini,4-bit,Bash,bash_16,judge_rejected,2,0,verification_omission(1),0,0,0,1
+Phi-4-Mini,4-bit,Bash,bash_17,max_turns,5,0,stagnation(1),0,1,0,0
+Phi-4-Mini,4-bit,Bash,bash_18,judge_rejected,2,1,verification_omission(1),0,0,0,1
+Phi-4-Mini,4-bit,Bash,bash_19,judge_rejected,3,0,verification_omission(1),0,0,0,1
+Phi-4-Mini,4-bit,Bash,bash_20,max_turns,5,2,truncation(1),0,0,1,0
+Phi-4-Mini,4-bit,Python,py_1,judge_rejected,3,0,truncation(3); verification_omission(1),0,0,1,1
+Phi-4-Mini,4-bit,Python,py_2,judge_rejected,1,0,truncation(1); verification_omission(1),0,0,1,1
+Phi-4-Mini,4-bit,Python,py_3,judge_rejected,1,1,verification_omission(1),0,0,0,1
+Phi-4-Mini,4-bit,Python,py_4,judge_rejected,2,0,truncation(1),0,0,1,0
+Phi-4-Mini,4-bit,Python,py_5,success,2,0,truncation(1); verification_omission(1),0,0,1,1
+Phi-4-Mini,4-bit,Python,py_6,success,1,1,verification_omission(1),0,0,0,1
+Phi-4-Mini,4-bit,Python,py_7,judge_rejected,5,0,stagnation(1); truncation(2); verification_omission(1),0,1,1,1
+Phi-4-Mini,4-bit,Python,py_8,success,1,0,truncation(1),0,0,1,0
+Phi-4-Mini,4-bit,Python,py_9,max_turns,5,0,stagnation(1); truncation(5),0,1,1,0
+Phi-4-Mini,4-bit,Python,py_10,judge_rejected,1,0,truncation(1),0,0,1,0
+Phi-4-Mini,4-bit,Python,py_11,max_turns,5,1,stagnation(1); truncation(1),0,1,1,0
+Phi-4-Mini,4-bit,Python,py_12,success,5,1,stagnation(1); truncation(3); verification_omission(1),0,1,1,1
+Phi-4-Mini,4-bit,Python,py_13,judge_rejected,1,0,truncation(1); verification_omission(1),0,0,1,1
+Phi-4-Mini,4-bit,Python,py_14,success,2,0,truncation(2); verification_omission(1),0,0,1,1
+Phi-4-Mini,4-bit,Python,py_15,success,1,0,truncation(1),0,0,1,0
+Phi-4-Mini,4-bit,Python,py_16,judge_rejected,1,0,truncation(1); verification_omission(1),0,0,1,1
+Phi-4-Mini,4-bit,Python,py_17,judge_rejected,1,0,truncation(1),0,0,1,0
+Phi-4-Mini,4-bit,Python,py_18,max_turns,5,3,stagnation(1); truncation(2),0,1,1,0
+Phi-4-Mini,4-bit,Python,py_19,judge_rejected,4,0,stagnation(1); truncation(4); verification_omission(1),0,1,1,1
+Phi-4-Mini,4-bit,Python,py_20,success,1,0,verification_omission(1),0,0,0,1
+Phi-4-Mini,4-bit,Web,web_1,judge_rejected,3,1,truncation(1),0,0,1,0
+Phi-4-Mini,4-bit,Web,web_2,success,2,0,truncation(1),0,0,1,0
+Phi-4-Mini,4-bit,Web,web_3,unknown,5,2,stagnation(1); truncation(1),0,1,1,0
+Phi-4-Mini,4-bit,Web,web_4,unknown,5,2,stagnation(1),0,1,0,0
+Phi-4-Mini,4-bit,Web,web_5,judge_rejected,5,2,stagnation(1); truncation(1),0,1,1,0
+Phi-4-Mini,4-bit,Web,web_6,success,3,1,truncation(1),0,0,1,0
+Phi-4-Mini,4-bit,Web,web_7,success,2,0,truncation(1),0,0,1,0
+Phi-4-Mini,4-bit,Web,web_8,judge_rejected,2,1,truncation(1),0,0,1,0
+Phi-4-Mini,4-bit,Web,web_9,success,2,0,truncation(1),0,0,1,0
+Phi-4-Mini,4-bit,Web,web_10,success,2,1,truncation(1),0,0,1,0
+Phi-4-Mini,4-bit,Web,web_11,success,3,0,truncation(1),0,0,1,0
+Phi-4-Mini,4-bit,Web,web_12,success,4,2,stagnation(1); truncation(1),0,1,1,0
+Phi-4-Mini,4-bit,Web,web_13,judge_rejected,3,1,truncation(1),0,0,1,0
+Phi-4-Mini,4-bit,Web,web_14,success,2,0,truncation(1),0,0,1,0
+Phi-4-Mini,4-bit,Web,web_15,success,2,1,truncation(1),0,0,1,0
+Phi-4-Mini,4-bit,Web,web_16,unknown,5,3,stagnation(1),0,1,0,0
+Phi-4-Mini,4-bit,Web,web_17,unknown,5,0,stagnation(1); truncation(1),0,1,1,0
+Phi-4-Mini,4-bit,Web,web_18,unknown,5,2,stagnation(1); truncation(1),0,1,1,0
+Phi-4-Mini,4-bit,Web,web_19,unknown,5,0,stagnation(1); truncation(1),0,1,1,0
+Phi-4-Mini,4-bit,Web,web_20,unknown,5,1,stagnation(1),0,1,0,0
+Phi-4-Mini,8-bit,Python,py_1,judge_rejected,1,0,truncation(1); verification_omission(1),0,0,1,1
+Phi-4-Mini,8-bit,Python,py_2,judge_rejected,1,0,truncation(1); verification_omission(1),0,0,1,1
+Phi-4-Mini,8-bit,Python,py_3,judge_rejected,1,0,truncation(1); verification_omission(1),0,0,1,1
+Phi-4-Mini,8-bit,Python,py_4,success,1,0,truncation(1); verification_omission(1),0,0,1,1
+Phi-4-Mini,8-bit,Python,py_5,judge_rejected,1,1,verification_omission(1),0,0,0,1
+Phi-4-Mini,8-bit,Python,py_6,judge_rejected,1,0,truncation(1); verification_omission(1),0,0,1,1
+Phi-4-Mini,8-bit,Python,py_7,judge_rejected,1,0,truncation(1); verification_omission(1),0,0,1,1
+Phi-4-Mini,8-bit,Python,py_8,judge_rejected,2,0,truncation(2),0,0,1,0
+Phi-4-Mini,8-bit,Python,py_9,judge_rejected,5,1,stagnation(1); truncation(4),0,1,1,0
+Phi-4-Mini,8-bit,Python,py_10,judge_rejected,1,0,truncation(1),0,0,1,0
+Phi-4-Mini,8-bit,Python,py_11,unknown,1,0,truncation(1),0,0,1,0
+Phi-4-Mini,8-bit,Python,py_12,success,1,0,truncation(1),0,0,1,0
+Phi-4-Mini,8-bit,Python,py_13,success,1,0,truncation(1),0,0,1,0
+Phi-4-Mini,8-bit,Python,py_14,success,1,0,truncation(1); verification_omission(1),0,0,1,1
+Phi-4-Mini,8-bit,Python,py_15,success,1,0,truncation(1); verification_omission(1),0,0,1,1
+Phi-4-Mini,8-bit,Python,py_16,judge_rejected,1,0,truncation(1),0,0,1,0
+Phi-4-Mini,8-bit,Python,py_17,success,1,0,truncation(1); verification_omission(1),0,0,1,1
+Phi-4-Mini,8-bit,Python,py_18,success,1,0,truncation(1); verification_omission(1),0,0,1,1
+Phi-4-Mini,8-bit,Python,py_19,judge_rejected,1,0,truncation(1); verification_omission(1),0,0,1,1
+Phi-4-Mini,8-bit,Python,py_20,success,3,1,none,0,0,0,0
+Phi-4-Mini,8-bit,Web,web_1,success,4,2,stagnation(1); truncation(1),0,1,1,0
+Phi-4-Mini,8-bit,Web,web_2,judge_rejected,3,2,truncation(1),0,0,1,0
+Phi-4-Mini,8-bit,Web,web_3,success,4,2,stagnation(1); truncation(1),0,1,1,0
+Phi-4-Mini,8-bit,Web,web_4,unknown,5,4,stagnation(1),0,1,0,0
+Phi-4-Mini,8-bit,Web,web_5,success,3,2,truncation(1),0,0,1,0
+Phi-4-Mini,8-bit,Web,web_6,success,3,1,truncation(1),0,0,1,0
+Phi-4-Mini,8-bit,Web,web_7,judge_rejected,3,1,truncation(1),0,0,1,0
+Phi-4-Mini,8-bit,Web,web_8,success,5,2,stagnation(1); truncation(1),0,1,1,0
+Phi-4-Mini,8-bit,Web,web_9,judge_rejected,3,1,truncation(1),0,0,1,0
+Phi-4-Mini,8-bit,Web,web_10,success,3,2,truncation(1),0,0,1,0
+Phi-4-Mini,8-bit,Web,web_11,unknown,5,0,stagnation(1); truncation(1),0,1,1,0
+Phi-4-Mini,8-bit,Web,web_12,success,3,1,truncation(1),0,0,1,0
+Phi-4-Mini,8-bit,Web,web_13,judge_rejected,5,4,stagnation(1); truncation(1),0,1,1,0
+Phi-4-Mini,8-bit,Web,web_14,success,4,0,stagnation(1); truncation(1),0,1,1,0
+Phi-4-Mini,8-bit,Web,web_15,success,3,1,truncation(1),0,0,1,0
+Phi-4-Mini,8-bit,Web,web_16,unknown,5,3,stagnation(1); truncation(1),0,1,1,0
+Phi-4-Mini,8-bit,Web,web_17,success,3,1,truncation(1),0,0,1,0
+Phi-4-Mini,8-bit,Web,web_18,judge_rejected,5,3,stagnation(1); truncation(1),0,1,1,0
+Phi-4-Mini,8-bit,Web,web_19,unknown,5,2,stagnation(1),0,1,0,0
+Phi-4-Mini,8-bit,Web,web_20,judge_rejected,3,1,none,0,0,0,0
+Phi-4-Mini,8-bit,Bash,bash_1,judge_rejected,4,2,stagnation(1),0,1,0,0
+Phi-4-Mini,8-bit,Bash,bash_2,judge_rejected,2,0,truncation(1),0,0,1,0
+Phi-4-Mini,8-bit,Bash,bash_3,max_turns,5,2,none,0,0,0,0
+Phi-4-Mini,8-bit,Bash,bash_4,judge_rejected,3,1,verification_omission(1),0,0,0,1
+Phi-4-Mini,8-bit,Bash,bash_5,success,3,0,truncation(1),0,0,1,0
+Phi-4-Mini,8-bit,Bash,bash_6,judge_rejected,3,1,truncation(1),0,0,1,0
+Phi-4-Mini,8-bit,Bash,bash_7,max_turns,5,1,none,0,0,0,0
+Phi-4-Mini,8-bit,Bash,bash_8,judge_rejected,2,2,none,0,0,0,0
+Phi-4-Mini,8-bit,Bash,bash_9,judge_rejected,4,1,none,0,0,0,0
+Phi-4-Mini,8-bit,Bash,bash_10,max_turns,5,2,none,0,0,0,0
+Phi-4-Mini,8-bit,Bash,bash_11,judge_rejected,2,0,none,0,0,0,0
+Phi-4-Mini,8-bit,Bash,bash_12,judge_rejected,1,0,none,0,0,0,0
+Phi-4-Mini,8-bit,Bash,bash_13,judge_rejected,2,0,none,0,0,0,0
+Phi-4-Mini,8-bit,Bash,bash_14,max_turns,5,4,reasoning_leakage(1),1,0,0,0
+Phi-4-Mini,8-bit,Bash,bash_15,max_turns,5,2,none,0,0,0,0
+Phi-4-Mini,8-bit,Bash,bash_16,judge_rejected,3,1,stagnation(1); verification_omission(1),0,1,0,1
+Phi-4-Mini,8-bit,Bash,bash_17,judge_rejected,2,0,none,0,0,0,0
+Phi-4-Mini,8-bit,Bash,bash_18,max_turns,5,0,none,0,0,0,0
+Phi-4-Mini,8-bit,Bash,bash_19,judge_rejected,3,1,none,0,0,0,0
+Phi-4-Mini,8-bit,Bash,bash_20,judge_rejected,4,1,none,0,0,0,0
+Qwen-3.5,4-bit,Bash,bash_1,unknown,3,2,reasoning_leakage(3); truncation(1),1,0,1,0
+Qwen-3.5,4-bit,Bash,bash_2,max_turns,5,3,reasoning_leakage(5); truncation(2),1,0,1,0
+Qwen-3.5,4-bit,Bash,bash_3,max_turns,5,4,reasoning_leakage(4); truncation(5),1,0,1,0
+Qwen-3.5,4-bit,Bash,bash_4,unknown,3,1,reasoning_leakage(2); truncation(2),1,0,1,0
+Qwen-3.5,4-bit,Bash,bash_5,unknown,2,0,truncation(1),0,0,1,0
+Qwen-3.5,4-bit,Bash,bash_6,judge_rejected,5,3,reasoning_leakage(3); truncation(2),1,0,1,0
+Qwen-3.5,4-bit,Bash,bash_7,unknown,2,1,reasoning_leakage(2); truncation(1),1,0,1,0
+Qwen-3.5,4-bit,Bash,bash_8,success,2,1,truncation(1),0,0,1,0
+Qwen-3.5,4-bit,Bash,bash_9,judge_rejected,2,2,reasoning_leakage(1); truncation(1),1,0,1,0
+Qwen-3.5,4-bit,Bash,bash_10,max_turns,5,5,stagnation(1); truncation(4),0,1,1,0
+Qwen-3.5,4-bit,Bash,bash_11,unknown,3,1,reasoning_leakage(2); truncation(2); verification_omission(1),1,0,1,1
+Qwen-3.5,4-bit,Bash,bash_12,max_turns,5,5,reasoning_leakage(6); truncation(3),1,0,1,0
+Qwen-3.5,4-bit,Bash,bash_13,unknown,5,4,reasoning_leakage(2); truncation(2); verification_omission(1),1,0,1,1
+Qwen-3.5,4-bit,Bash,bash_14,success,2,0,verification_omission(1),0,0,0,1
+Qwen-3.5,4-bit,Bash,bash_15,max_turns,5,3,reasoning_leakage(7); truncation(5),1,0,1,0
+Qwen-3.5,4-bit,Bash,bash_16,max_turns,5,4,reasoning_leakage(6); truncation(4),1,0,1,0
+Qwen-3.5,4-bit,Bash,bash_17,judge_rejected,2,2,reasoning_leakage(4); truncation(2),1,0,1,0
+Qwen-3.5,4-bit,Bash,bash_18,max_turns,5,3,reasoning_leakage(7); truncation(3),1,0,1,0
+Qwen-3.5,4-bit,Bash,bash_19,judge_rejected,4,2,reasoning_leakage(3); truncation(1),1,0,1,0
+Qwen-3.5,4-bit,Bash,bash_20,success,3,0,verification_omission(1),0,0,0,1
+Qwen-3.5,4-bit,Python,py_2,judge_rejected,5,4,reasoning_leakage(1); stagnation(1); truncation(5),1,1,1,0
+Qwen-3.5,4-bit,Python,py_3,max_turns,5,2,stagnation(1); truncation(3),0,1,1,0
+Qwen-3.5,4-bit,Python,py_4,max_turns,5,5,stagnation(1); truncation(4),0,1,1,0
+Qwen-3.5,4-bit,Python,py_5,judge_rejected,4,2,stagnation(1); truncation(1),0,1,1,0
+Qwen-3.5,4-bit,Python,py_6,unknown,2,0,truncation(2),0,0,1,0
+Qwen-3.5,4-bit,Python,py_7,max_turns,5,4,stagnation(1); truncation(3),0,1,1,0
+Qwen-3.5,4-bit,Python,py_8,max_turns,5,3,stagnation(1); truncation(1),0,1,1,0
+Qwen-3.5,4-bit,Python,py_9,max_turns,5,2,stagnation(1); truncation(4),0,1,1,0
+Qwen-3.5,4-bit,Python,py_10,max_turns,5,2,stagnation(1); truncation(3),0,1,1,0
+Qwen-3.5,4-bit,Python,py_11,unknown,2,0,truncation(2),0,0,1,0
+Qwen-3.5,4-bit,Python,py_12,unknown,3,2,truncation(3),0,0,1,0
+Qwen-3.5,4-bit,Python,py_13,unknown,4,2,stagnation(1); truncation(4),0,1,1,0
+Qwen-3.5,4-bit,Python,py_14,success,2,0,truncation(2),0,0,1,0
+Qwen-3.5,4-bit,Python,py_15,unknown,2,1,truncation(2),0,0,1,0
+Qwen-3.5,4-bit,Python,py_16,max_turns,5,4,stagnation(1); truncation(2),0,1,1,0
+Qwen-3.5,4-bit,Python,py_17,success,2,0,truncation(1),0,0,1,0
+Qwen-3.5,4-bit,Python,py_18,max_turns,5,3,stagnation(1); truncation(3),0,1,1,0
+Qwen-3.5,4-bit,Python,py_19,unknown,1,0,truncation(1),0,0,1,0
+Qwen-3.5,4-bit,Python,py_20,judge_rejected,5,0,stagnation(1); truncation(1),0,1,1,0
+Qwen-3.5,4-bit,Web,web_1,success,3,0,truncation(1),0,0,1,0
+Qwen-3.5,4-bit,Web,web_2,unknown,5,0,stagnation(1); truncation(1),0,1,1,0
+Qwen-3.5,4-bit,Web,web_3,success,3,0,truncation(1),0,0,1,0
+Qwen-3.5,4-bit,Web,web_4,unknown,5,0,stagnation(1); truncation(1),0,1,1,0
+Qwen-3.5,4-bit,Web,web_5,unknown,3,0,truncation(1),0,0,1,0
+Qwen-3.5,4-bit,Web,web_6,success,3,1,truncation(1),0,0,1,0
+Qwen-3.5,4-bit,Web,web_7,unknown,2,0,truncation(1),0,0,1,0
+Qwen-3.5,4-bit,Web,web_8,unknown,5,1,stagnation(1); truncation(1),0,1,1,0
+Qwen-3.5,4-bit,Web,web_9,unknown,2,1,truncation(1),0,0,1,0
+Qwen-3.5,4-bit,Web,web_10,unknown,5,1,stagnation(1); truncation(1),0,1,1,0
+Qwen-3.5,4-bit,Web,web_11,unknown,5,0,stagnation(1); truncation(1),0,1,1,0
+Qwen-3.5,4-bit,Web,web_12,success,3,0,truncation(1),0,0,1,0
+Qwen-3.5,4-bit,Web,web_13,unknown,5,0,stagnation(1); truncation(1),0,1,1,0
+Qwen-3.5,4-bit,Web,web_14,success,2,0,truncation(1),0,0,1,0
+Qwen-3.5,4-bit,Web,web_15,success,4,0,stagnation(1); truncation(1),0,1,1,0
+Qwen-3.5,4-bit,Web,web_16,unknown,3,0,truncation(1),0,0,1,0
+Qwen-3.5,4-bit,Web,web_17,success,5,0,stagnation(1); truncation(1),0,1,1,0
+Qwen-3.5,4-bit,Web,web_18,unknown,2,1,truncation(1),0,0,1,0
+Qwen-3.5,4-bit,Web,web_19,unknown,5,0,stagnation(1); truncation(1),0,1,1,0
+Qwen-3.5,4-bit,Web,web_20,success,2,0,none,0,0,0,0
+Qwen-3.5,8-bit,Bash,bash_1,unknown,2,0,verification_omission(1),0,0,0,1
+Qwen-3.5,8-bit,Bash,bash_2,judge_rejected,3,1,reasoning_leakage(2); verification_omission(1),1,0,0,1
+Qwen-3.5,8-bit,Bash,bash_3,max_turns,5,2,reasoning_leakage(5); truncation(3),1,0,1,0
+Qwen-3.5,8-bit,Bash,bash_4,judge_rejected,3,0,reasoning_leakage(1); verification_omission(1),1,0,0,1
+Qwen-3.5,8-bit,Bash,bash_5,unknown,5,0,reasoning_leakage(2); truncation(1),1,0,1,0
+Qwen-3.5,8-bit,Bash,bash_6,success,4,2,truncation(2),0,0,1,0
+Qwen-3.5,8-bit,Bash,bash_7,success,5,3,reasoning_leakage(2); truncation(4),1,0,1,0
+Qwen-3.5,8-bit,Bash,bash_8,unknown,2,1,truncation(2),0,0,1,0
+Qwen-3.5,8-bit,Bash,bash_9,max_turns,5,4,reasoning_leakage(4); truncation(3),1,0,1,0
+Qwen-3.5,8-bit,Bash,bash_10,success,3,2,truncation(2),0,0,1,0
+Qwen-3.5,8-bit,Bash,bash_11,success,4,0,truncation(2),0,0,1,0
+Qwen-3.5,8-bit,Bash,bash_12,max_turns,5,3,reasoning_leakage(6); truncation(3),1,0,1,0
+Qwen-3.5,8-bit,Bash,bash_13,success,4,3,reasoning_leakage(1); truncation(2),1,0,1,0
+Qwen-3.5,8-bit,Bash,bash_14,unknown,2,0,truncation(2),0,0,1,0
+Qwen-3.5,8-bit,Bash,bash_15,max_turns,5,3,reasoning_leakage(4); truncation(4),1,0,1,0
+Qwen-3.5,8-bit,Bash,bash_16,unknown,3,2,reasoning_leakage(4); truncation(3),1,0,1,0
+Qwen-3.5,8-bit,Bash,bash_17,success,4,2,reasoning_leakage(3); truncation(2),1,0,1,0
+Qwen-3.5,8-bit,Bash,bash_18,success,3,0,truncation(1); verification_omission(1),0,0,1,1
+Qwen-3.5,8-bit,Bash,bash_19,success,5,0,truncation(1),0,0,1,0
+Qwen-3.5,8-bit,Bash,bash_20,success,5,3,reasoning_leakage(3); truncation(2); verification_omission(1),1,0,1,1
+Qwen-3.5,8-bit,Python,py_1,judge_rejected,4,0,stagnation(1); truncation(4),0,1,1,0
+Qwen-3.5,8-bit,Python,py_2,max_turns,5,3,stagnation(1); truncation(5),0,1,1,0
+Qwen-3.5,8-bit,Python,py_3,max_turns,5,1,stagnation(1); truncation(4),0,1,1,0
+Qwen-3.5,8-bit,Python,py_4,max_turns,5,4,stagnation(1); truncation(4),0,1,1,0
+Qwen-3.5,8-bit,Python,py_5,judge_rejected,1,0,truncation(1),0,0,1,0
+Qwen-3.5,8-bit,Python,py_6,success,2,0,truncation(2),0,0,1,0
+Qwen-3.5,8-bit,Python,py_7,success,1,0,truncation(1),0,0,1,0
+Qwen-3.5,8-bit,Python,py_8,max_turns,5,4,stagnation(1); truncation(3),0,1,1,0
+Qwen-3.5,8-bit,Python,py_9,success,3,1,truncation(3),0,0,1,0
+Qwen-3.5,8-bit,Python,py_10,unknown,3,1,reasoning_leakage(1); truncation(2),1,0,1,0
+Qwen-3.5,8-bit,Python,py_11,success,2,1,truncation(2),0,0,1,0
+Qwen-3.5,8-bit,Python,py_12,success,3,1,truncation(2),0,0,1,0
+Qwen-3.5,8-bit,Python,py_13,success,5,1,stagnation(1); truncation(2),0,1,1,0
+Qwen-3.5,8-bit,Python,py_14,unknown,2,0,truncation(2),0,0,1,0
+Qwen-3.5,8-bit,Python,py_15,success,2,0,truncation(1),0,0,1,0
+Qwen-3.5,8-bit,Python,py_16,max_turns,5,5,stagnation(1); truncation(2),0,1,1,0
+Qwen-3.5,8-bit,Python,py_17,unknown,1,0,truncation(1),0,0,1,0
+Qwen-3.5,8-bit,Python,py_18,judge_rejected,5,3,reasoning_leakage(1); stagnation(1); truncation(3),1,1,1,0
+Qwen-3.5,8-bit,Python,py_19,unknown,1,1,none,0,0,0,0
+Qwen-3.5,8-bit,Python,py_20,unknown,2,0,none,0,0,0,0
+Qwen-3.5,8-bit,Web,web_1,success,3,0,truncation(1),0,0,1,0
+Qwen-3.5,8-bit,Web,web_2,unknown,3,0,truncation(1),0,0,1,0
+Qwen-3.5,8-bit,Web,web_3,success,4,0,stagnation(1); truncation(1),0,1,1,0
+Qwen-3.5,8-bit,Web,web_4,success,5,0,stagnation(1); truncation(1),0,1,1,0
+Qwen-3.5,8-bit,Web,web_5,success,3,0,truncation(1),0,0,1,0
+Qwen-3.5,8-bit,Web,web_6,unknown,4,0,stagnation(1); truncation(1),0,1,1,0
+Qwen-3.5,8-bit,Web,web_7,success,2,0,truncation(1),0,0,1,0
+Qwen-3.5,8-bit,Web,web_8,success,3,0,truncation(1),0,0,1,0
+Qwen-3.5,8-bit,Web,web_9,success,2,0,truncation(1),0,0,1,0
+Qwen-3.5,8-bit,Web,web_10,unknown,5,2,stagnation(1),0,1,0,0
+Qwen-3.5,8-bit,Web,web_11,unknown,5,0,stagnation(1); truncation(1),0,1,1,0
+Qwen-3.5,8-bit,Web,web_12,success,3,0,truncation(1),0,0,1,0
+Qwen-3.5,8-bit,Web,web_13,unknown,5,1,stagnation(1); truncation(1),0,1,1,0
+Qwen-3.5,8-bit,Web,web_14,success,2,0,truncation(1),0,0,1,0
+Qwen-3.5,8-bit,Web,web_15,success,3,0,truncation(1),0,0,1,0
+Qwen-3.5,8-bit,Web,web_16,success,5,0,stagnation(1); truncation(1),0,1,1,0
+Qwen-3.5,8-bit,Web,web_17,unknown,5,0,stagnation(1); truncation(1),0,1,1,0
+Qwen-3.5,8-bit,Web,web_18,unknown,5,1,stagnation(1); truncation(1),0,1,1,0
+Qwen-3.5,8-bit,Web,web_19,unknown,5,0,stagnation(1); truncation(1),0,1,1,0
+Qwen-3.5,8-bit,Web,web_20,unknown,5,0,stagnation(1),0,1,0,0

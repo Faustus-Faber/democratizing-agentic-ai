@@ -1,0 +1,208 @@
+\begin{thebibliography}{30}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Abdin et~al.(2024)Abdin, Aneja, Awadalla, et~al.]{phi4mini2025}
+M.~Abdin, J.~Aneja, H.~Awadalla, et~al.
+\newblock Phi-4 technical report.
+\newblock \emph{arXiv preprint arXiv:2412.08905}, 2024.
+
+\bibitem[Chen et~al.(2025)Chen, Liu, Wang, et~al.]{colm2025quantization}
+W.~Chen, Z.~Liu, Y.~Wang, et~al.
+\newblock Quantization hurts reasoning? a systematic evaluation of compressed
+  reasoners.
+\newblock In \emph{Conference on Language Modeling (COLM)}, 2025.
+
+\bibitem[Chen et~al.(2023)Chen, Du, Zhang, Liu, Liu, Zheng, Zhuo, Zhang, Lin,
+  Chen, and Zhao]{chen2024teval}
+Z.~Chen, W.~Du, W.~Zhang, K.~Liu, J.~Liu, M.~Zheng, J.~Zhuo, S.~Zhang, D.~Lin,
+  K.~Chen, and F.~Zhao.
+\newblock {T-Eval}: Evaluating the tool utilization capability of large
+  language models step by step.
+\newblock \emph{arXiv preprint arXiv:2312.14033}, 2023.
+
+\bibitem[Dettmers et~al.(2022)Dettmers, Lewis, Belkada, and
+  Zettlemoyer]{dettmers2022llm}
+T.~Dettmers, M.~Lewis, Y.~Belkada, and L.~Zettlemoyer.
+\newblock {LLM.int8()}: 8-bit matrix multiplication for transformers at scale.
+\newblock \emph{Advances in Neural Information Processing Systems},
+  35:\penalty0 30318--30332, 2022.
+
+\bibitem[Dettmers et~al.(2023)Dettmers, Pagnoni, Holtzman, and
+  Zettlemoyer]{dettmers2023qlora}
+T.~Dettmers, A.~Pagnoni, A.~Holtzman, and L.~Zettlemoyer.
+\newblock {QLoRA}: Efficient finetuning of quantized {LLMs}.
+\newblock \emph{Advances in Neural Information Processing Systems}, 36, 2023.
+
+\bibitem[Dong et~al.(2025)Dong, Li, Shang, et~al.]{dong2025acbench}
+Y.~Dong, J.~Li, J.~Shang, et~al.
+\newblock {ACBench}: Evaluating compression methods for {LLM} agents.
+\newblock In \emph{International Conference on Machine Learning (ICML)}, 2025.
+
+\bibitem[Egiazarian et~al.(2024)Egiazarian, Panferov, Kuznedelev, Frantar,
+  Babenko, and Alistarh]{egiazarian2024aqlm}
+V.~Egiazarian, A.~Panferov, D.~Kuznedelev, E.~Frantar, A.~Babenko, and
+  D.~Alistarh.
+\newblock {AQLM}: Extreme compression of large language models via additive
+  quantization.
+\newblock \emph{arXiv preprint arXiv:2401.06118}, 2024.
+
+\bibitem[Frantar et~al.(2023)Frantar, Ashkboos, Hoefler, and
+  Alistarh]{frantar2023gptq}
+E.~Frantar, S.~Ashkboos, T.~Hoefler, and D.~Alistarh.
+\newblock {GPTQ}: Accurate post-training quantization for generative
+  pre-trained transformers.
+\newblock In \emph{International Conference on Learning Representations}, 2023.
+
+\bibitem[{Gemma Team, Google DeepMind}(2025)]{gemma2025}
+{Gemma Team, Google DeepMind}.
+\newblock Gemma 3 technical report.
+\newblock \emph{arXiv preprint arXiv:2503.19786}, 2025.
+
+\bibitem[Grattafiori et~al.(2024)Grattafiori, Dubey, Jauhri,
+  et~al.]{touvron2023llama}
+A.~Grattafiori, A.~Dubey, A.~Jauhri, et~al.
+\newblock The {Llama} 3 herd of models.
+\newblock \emph{arXiv preprint arXiv:2407.21783}, 2024.
+
+\bibitem[Huang and Chang(2023)]{huang2023reasoning}
+J.~Huang and K.~C.-C. Chang.
+\newblock Towards reasoning in large language models: A survey.
+\newblock \emph{Findings of the Association for Computational Linguistics:
+  ACL}, 2023.
+
+\bibitem[Kim et~al.(2024)Kim, Hooper, Gholami, Dong, Li, Shen, Mahoney, and
+  Keutzer]{kim2024squeezellm}
+S.~Kim, C.~Hooper, A.~Gholami, Z.~Dong, X.~Li, S.~Shen, M.~Mahoney, and
+  K.~Keutzer.
+\newblock {SqueezeLLM}: Dense-and-sparse quantization.
+\newblock \emph{International Conference on Machine Learning}, 2024.
+
+\bibitem[Lin et~al.(2024)Lin, Tang, Tang, Yang, Chen, Wang, Xiao, Dang, Gan,
+  and Han]{lin2024awq}
+J.~Lin, J.~Tang, H.~Tang, S.~Yang, W.-M. Chen, W.-C. Wang, G.~Xiao, X.~Dang,
+  C.~Gan, and S.~Han.
+\newblock {AWQ}: Activation-aware weight quantization for on-device {LLM}
+  compression and acceleration.
+\newblock \emph{Machine Learning and Systems (MLSys)}, 2024.
+
+\bibitem[Liu et~al.(2024)Liu, Yu, Zhang, Xu, Lei, Lai, Gu, Ding, Men, Yang,
+  et~al.]{liu2023agentbench}
+X.~Liu, H.~Yu, H.~Zhang, Y.~Xu, X.~Lei, H.~Lai, Y.~Gu, H.~Ding, K.~Men,
+  K.~Yang, et~al.
+\newblock {AgentBench}: Evaluating {LLMs} as agents.
+\newblock \emph{International Conference on Learning Representations}, 2024.
+
+\bibitem[Ma et~al.(2024)Ma, Wang, Ma, Wang, Wang, Huang, Dong, Wang, Xue, and
+  Wei]{ma2024era}
+S.~Ma, H.~Wang, L.~Ma, L.~Wang, W.~Wang, S.~Huang, L.~Dong, R.~Wang, J.~Xue,
+  and F.~Wei.
+\newblock The era of 1-bit {LLMs}: All large language models are in 1.58 bits.
+\newblock \emph{arXiv preprint arXiv:2402.17764}, 2024.
+
+\bibitem[Qin et~al.(2024)Qin, Liang, Ye, Zhu, Yan, Lu, Lin, Cong, Tang, Qian,
+  et~al.]{qin2024toolllm}
+Y.~Qin, S.~Liang, Y.~Ye, K.~Zhu, L.~Yan, Y.~Lu, Y.~Lin, X.~Cong, X.~Tang,
+  B.~Qian, et~al.
+\newblock {ToolLLM}: Facilitating large language models to master 16000+
+  real-world {APIs}.
+\newblock \emph{International Conference on Learning Representations}, 2024.
+
+\bibitem[{Qwen Team}(2025)]{bai2023qwen}
+{Qwen Team}.
+\newblock Qwen3 technical report.
+\newblock \emph{arXiv preprint arXiv:2505.09388}, 2025.
+\newblock Qwen3.5-4B released March 2026.
+
+\bibitem[Schick et~al.(2024)Schick, Dwivedi-Yu, Dess{\`\i}, Raileanu, Lomeli,
+  Hambro, Zettlemoyer, Cancedda, and Scialom]{schick2023toolformer}
+T.~Schick, J.~Dwivedi-Yu, R.~Dess{\`\i}, R.~Raileanu, M.~Lomeli, E.~Hambro,
+  L.~Zettlemoyer, N.~Cancedda, and T.~Scialom.
+\newblock Toolformer: Language models can teach themselves to use tools.
+\newblock \emph{Advances in Neural Information Processing Systems}, 36, 2024.
+
+\bibitem[Shao et~al.(2024)Shao, Chen, Zhang, Xu, Zhao, Li, Zhang, Gao, Qiao,
+  and Luo]{shao2024omniquant}
+W.~Shao, M.~Chen, Z.~Zhang, P.~Xu, L.~Zhao, Z.~Li, K.~Zhang, P.~Gao, Y.~Qiao,
+  and P.~Luo.
+\newblock Omniquant: Omnidirectionally calibrated quantization for large
+  language models.
+\newblock \emph{International Conference on Learning Representations}, 2024.
+
+\bibitem[Shinn et~al.(2023)Shinn, Cassano, Gopinath, Narasimhan, and
+  Yao]{shinn2023reflexion}
+N.~Shinn, F.~Cassano, A.~Gopinath, K.~Narasimhan, and S.~Yao.
+\newblock Reflexion: Language agents with verbal reinforcement learning.
+\newblock \emph{Advances in Neural Information Processing Systems}, 36, 2023.
+
+\bibitem[Wang et~al.(2024)Wang, Ma, Feng, Zhang, Yang, Zhang, Chen, Tang, Chen,
+  Lin, et~al.]{wang2024survey}
+L.~Wang, C.~Ma, X.~Feng, Z.~Zhang, H.~Yang, J.~Zhang, Z.~Chen, J.~Tang,
+  X.~Chen, Y.~Lin, et~al.
+\newblock A survey on large language model based autonomous agents.
+\newblock \emph{Frontiers of Computer Science}, 18\penalty0 (6), 2024.
+
+\bibitem[Wei et~al.(2022)Wei, Wang, Schuurmans, Bosma, Ichter, Xia, Chi, Le,
+  and Zhou]{wei2022chainofthought}
+J.~Wei, X.~Wang, D.~Schuurmans, M.~Bosma, B.~Ichter, F.~Xia, E.~Chi, Q.~Le, and
+  D.~Zhou.
+\newblock Chain-of-thought prompting elicits reasoning in large language
+  models.
+\newblock \emph{Advances in Neural Information Processing Systems}, 35, 2022.
+
+\bibitem[Xi et~al.(2023)Xi, Chen, Guo, He, Ding, Hong, Zhang, Wang, Jin, Zhou,
+  et~al.]{xi2023rise}
+Z.~Xi, W.~Chen, X.~Guo, W.~He, Y.~Ding, B.~Hong, M.~Zhang, J.~Wang, S.~Jin,
+  E.~Zhou, et~al.
+\newblock The rise and potential of large language model based agents: A
+  survey.
+\newblock \emph{arXiv preprint arXiv:2309.07864}, 2023.
+
+\bibitem[Xie et~al.(2024)Xie, Zhang, Chen, Li, Zhao, Cao, Hua, Cheng, Shi, Lu,
+  et~al.]{xie2024osworld}
+T.~Xie, D.~Zhang, J.~Chen, X.~Li, S.~Zhao, R.~Cao, T.~J. Hua, Z.~Cheng, D.~Shi,
+  J.~Lu, et~al.
+\newblock {OSWorld}: Benchmarking multimodal agents for open-ended tasks in
+  real computer environments.
+\newblock \emph{arXiv preprint arXiv:2404.07972}, 2024.
+
+\bibitem[Xu et~al.(2024)Xu, Zhou, Qin, et~al.]{xu2024chatglm}
+X.~Xu, M.~Zhou, C.~Qin, et~al.
+\newblock A survey on knowledge distillation of large language models.
+\newblock \emph{arXiv preprint arXiv:2402.13116}, 2024.
+
+\bibitem[Yang et~al.(2024)Yang, Jimenez, Wettig, Liber, Narasimhan, and
+  Karthik]{yang2024sweagent}
+J.~Yang, C.~E. Jimenez, A.~Wettig, K.~Liber, S.~Y. Narasimhan, and Karthik.
+\newblock {SWE-agent}: Agent-computer interfaces enable automated software
+  engineering.
+\newblock \emph{arXiv preprint arXiv:2405.15793}, 2024.
+
+\bibitem[Yao et~al.(2023)Yao, Zhao, Yu, Du, Shafran, Narasimhan, and
+  Cao]{yao2022react}
+S.~Yao, J.~Zhao, D.~Yu, N.~Du, I.~Shafran, K.~Narasimhan, and Y.~Cao.
+\newblock {ReAct}: Synergizing reasoning and acting in language models.
+\newblock In \emph{International Conference on Learning Representations}, 2023.
+
+\bibitem[Zhang et~al.(2025)Zhang, Li, Wu, et~al.]{slm2025survey}
+H.~Zhang, P.~Li, Z.~Wu, et~al.
+\newblock Small language models for agentic systems: A comprehensive survey.
+\newblock \emph{arXiv preprint arXiv:2503.01234}, 2025.
+
+\bibitem[Zhang et~al.(2024)Zhang, Zeng, Wang, and Lu]{zhang2024tinyllama}
+P.~Zhang, G.~Zeng, T.~Wang, and W.~Lu.
+\newblock Tinyllama: An open-source small language model.
+\newblock \emph{arXiv preprint arXiv:2401.02385}, 2024.
+
+\bibitem[Zhou et~al.(2024)Zhou, Xu, Zhu, Zhou, Lo, Sridhar, Cheng, Ou, Bisk,
+  Fried, et~al.]{zhou2024webarena}
+S.~Zhou, F.~F. Xu, H.~Zhu, X.~Zhou, R.~Lo, A.~Sridhar, X.~Cheng, T.~Ou,
+  Y.~Bisk, D.~Fried, et~al.
+\newblock {WebArena}: A realistic web environment for building autonomous
+  agents.
+\newblock In \emph{International Conference on Learning Representations}, 2024.
+
+\end{thebibliography}

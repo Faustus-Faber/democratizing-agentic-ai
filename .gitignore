@@ -1,0 +1,29 @@
+# Agent configuration (excluded from repo)
+.agent/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+temp_script.py
+
+# LaTeX build artifacts
+*.aux
+*.log
+*.out
+*.synctex.gz
+*.fdb_latexmk
+*.fls
+*.toc
+*.lof
+*.lot
+*.blg
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE
+.vscode/
+.idea/
