@@ -83,7 +83,7 @@ Models load via \texttt{bitsandbytes}~\cite{dettmers2022llm}: NF4 4-bit with dou
 
 \subsection{Agentic Loop}
 
-We implement a ReAct-style~\cite{yao2022react} recursive loop ($D_{\max}{=}5$ turns): the agent receives the objective and compressed trajectory, produces a \texttt{<thought>} trace, emits an action, and observes the result. \textbf{TOON Compression} uses a sliding window of 2 turn-pairs (whitespace-normalized, outcomes truncated to 500 chars) to prevent context saturation. \textbf{Actor-Critic Self-Correction}: before execution, the same SLM re-evaluates the action (``Identify flaws. If perfect, output SAFE''); corrections replace originals.
+We implement a ReAct-style~\cite{yao2022react} recursive loop ($D_{\max}{=}5$ turns): the agent receives the objective and compressed trajectory, produces a \texttt{<thought>} trace, emits an action, and observes the result. \textbf{Sliding-window trajectory injection} compresses the execution history into a structured Turn/Action/Outcome representation, retains only the most recent 2 turn-pairs (whitespace-normalized, outcomes truncated to 500 chars), and injects this context into the next prompt to prevent context saturation. \textbf{Actor-Critic Self-Correction}: before execution, the same SLM re-evaluates the action (``Identify flaws. If perfect, output SAFE''); corrections replace originals.
 
 \textbf{Environments.} \textbf{Bash} (Env~A): one command in \texttt{```bash} blocks, 10s timeout---tests structural adherence. \textbf{Python} (Env~B): complete scripts in \texttt{```python} blocks, 15s timeout with traceback feedback---tests iterative debugging. \textbf{Web} (Env~C): JSON \texttt{search}/\texttt{answer} actions over a 40-entry knowledge base---tests cross-turn coherence.
 
@@ -269,7 +269,7 @@ Our qualitative analysis reveals that agentic reasoning is not monolithic but co
 Model & Failed Sub-Capability & Root Cause & Mitigation \\
 \midrule
 Qwen-3.5 & Format Adherence & Native \texttt{</think>} conflicts with \texttt{<thought>} & Output sanitization \\
-Llama-3.1 & State Tracking & TOON compression loses early context & Explicit state summaries \\
+Llama-3.1 & State Tracking & Trajectory window discards early context & Explicit state summaries \\
 Gemma-3 & Code Generation & 400-token budget truncates long scripts & Dynamic token budgeting \\
 Phi-4-Mini & Completion Signaling & No explicit \texttt{[TASK\_COMPLETE]} requirement & Add completion prompt \\
 \bottomrule

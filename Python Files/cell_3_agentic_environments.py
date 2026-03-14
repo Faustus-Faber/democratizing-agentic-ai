@@ -49,8 +49,8 @@ class RecursiveBashAgent:
             output += "\n" + result.stderr
         return output.strip()[:1000], result.returncode
 
-    def _build_toon_context(self, trajectory: list) -> str:
-        """Builds TOON (Trajectory-Ordered Observation Notation) context with sliding window."""
+    def _build_trajectory_context(self, trajectory: list) -> str:
+        """Builds sliding-window trajectory context for injection into the next prompt."""
         if not trajectory:
             return "Execution Trajectory: None yet.\n"
         context = "Execution Trajectory:\n"
@@ -81,7 +81,7 @@ class RecursiveBashAgent:
         return "[VERDICT: YES]" in judge_res.upper()
 
     def run_agentic_loop(self, objective: str) -> dict:
-        """Runs the multi-turn recursive loop with TOON context and actor-critic."""
+        """Runs the multi-turn recursive loop with trajectory context injection and actor-critic."""
         print(f"=== Starting Agentic Loop for Objective: {objective} ===")
 
         metrics = {
@@ -94,9 +94,9 @@ class RecursiveBashAgent:
         for turn in range(self.max_turns):
             print(f"\n--- Turn {turn + 1}/{self.max_turns} ---")
 
-            toon_context = self._build_toon_context(trajectory)
+            trajectory_context = self._build_trajectory_context(trajectory)
             dynamic_prompt = (
-                f"OBJECTIVE: {objective}\n\n{toon_context}\n"
+                f"OBJECTIVE: {objective}\n\n{trajectory_context}\n"
                 "Think inside <thought> tags whether the objective is fully solved. "
                 "If YES, output [TASK_COMPLETE]. If NO, provide your next bash command inside a ```bash block."
             )
@@ -206,8 +206,8 @@ class RecursivePythonAgent:
             output += "\n" + result.stderr
         return output.strip()[:1500], result.returncode
 
-    def _build_toon_context(self, trajectory: list) -> str:
-        """Builds TOON context with sliding window."""
+    def _build_trajectory_context(self, trajectory: list) -> str:
+        """Builds sliding-window trajectory context for injection into the next prompt."""
         if not trajectory:
             return "Execution Trajectory: None yet.\n"
         context = "Execution Trajectory:\n"
@@ -239,7 +239,7 @@ class RecursivePythonAgent:
         return "[VERDICT: YES]" in judge_res.upper()
 
     def run_agentic_loop(self, objective: str) -> dict:
-        """Runs the multi-turn recursive loop with TOON context and actor-critic."""
+        """Runs the multi-turn recursive loop with trajectory context injection and actor-critic."""
         print(f"=== Starting Environment B: {objective} ===")
 
         metrics = {
@@ -252,9 +252,9 @@ class RecursivePythonAgent:
         for turn in range(self.max_turns):
             print(f"\n--- Turn {turn + 1}/{self.max_turns} ---")
 
-            toon_context = self._build_toon_context(trajectory)
+            trajectory_context = self._build_trajectory_context(trajectory)
             dynamic_prompt = (
-                f"OBJECTIVE: {objective}\n\n{toon_context}\n"
+                f"OBJECTIVE: {objective}\n\n{trajectory_context}\n"
                 "Think inside <thought> tags whether the code has successfully solved the objective. "
                 "If YES, output [TASK_COMPLETE]. If NO, provide your next python script inside a ```python block."
             )
@@ -431,8 +431,8 @@ class WebRetrievalAgent:
         top_results = [res[1] for res in results[:2]]
         return "Search Results:\n- " + "\n- ".join(top_results)
 
-    def _build_toon_context(self, trajectory: list) -> str:
-        """Builds TOON context from full trajectory (no windowing for web)."""
+    def _build_trajectory_context(self, trajectory: list) -> str:
+        """Builds trajectory context from full history (no windowing for web) for prompt injection."""
         if not trajectory:
             return "Execution Trajectory: None yet.\n"
         context = "Execution Trajectory:\n"
@@ -461,7 +461,7 @@ class WebRetrievalAgent:
         return "[VERDICT: YES]" in judge_res.upper()
 
     def run_agentic_loop(self, objective: str) -> dict:
-        """Runs the multi-turn web retrieval loop with TOON context and actor-critic."""
+        """Runs the multi-turn web retrieval loop with trajectory context injection and actor-critic."""
         print(f"=== Starting Environment C: {objective} ===")
 
         metrics = {
@@ -474,9 +474,9 @@ class WebRetrievalAgent:
         for turn in range(self.max_turns):
             print(f"\n--- Turn {turn + 1}/{self.max_turns} ---")
 
-            toon_context = self._build_toon_context(trajectory)
+            trajectory_context = self._build_trajectory_context(trajectory)
             dynamic_prompt = (
-                f"OBJECTIVE: {objective}\n\n{toon_context}\n"
+                f"OBJECTIVE: {objective}\n\n{trajectory_context}\n"
                 "Think inside <thought> tags whether you have gathered all necessary information. "
                 "If YES, output the 'answer' JSON action. If NO, output the 'search' JSON action."
             )
