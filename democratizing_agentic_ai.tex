@@ -47,7 +47,7 @@ By early 2026, a range of highly capable Small Language Models (SLMs) with sub-1
 
 However, deploying SLMs as \emph{autonomous agents}---where the model must maintain coherent reasoning across multiple recursive turns of planning, execution, observation, and self-correction~\cite{yao2022react}---introduces compounding failure modes that static benchmarks fail to capture~\cite{dong2025acbench,liu2023agentbench}. When these agents run on resource-constrained hardware (e.g., Google Colab's free-tier NVIDIA T4 GPU with $\sim$15\,GB VRAM), aggressive quantization via \texttt{bitsandbytes}~\cite{dettmers2022llm,dettmers2023qlora} is often required, yet its effects on multi-turn agentic stability remain poorly understood~\cite{colm2025quantization}.
 
-\paragraph{Contributions.} This paper makes three contributions:
+\paragraph{Contributions.} This paper makes four contributions:
 \begin{enumerate}[nosep]
   \item We introduce the \textbf{Stability Decay Metric (SDM)} and \textbf{Quantization-Hallucination Ratio (QHR)} to disentangle agentic efficiency from structural formatting integrity.
   \item We conduct the first systematic evaluation of \textbf{multi-turn recursive stability} in quantized SLM agents across \textbf{4 models $\times$ 2 precisions $\times$ 3 environments $\times$ 20 tasks = 480 experimental configurations} (476 completed), identifying statistically significant, environment-dependent quantization effects.
@@ -74,7 +74,7 @@ COLM 2025~\cite{colm2025quantization} shows quantization disproportionately impa
 
 \subsection{Experimental Design and Task Prompts}
 
-We evaluate four SLMs under two quantization levels across three agentic environments, yielding a $4 \times 2 \times 3 = 24$ configuration grid. Each configuration is tested on 20 tasks, producing 480 planned trials (476 completed; 4 Llama-3.1 tasks terminated due to VRAM pressure). Experiments were conducted March 3--12, 2026, on Google Colab free-tier NVIDIA T4 GPUs ($\sim$15\,GB VRAM).
+We evaluate four SLMs under two quantization levels across three agentic environments, yielding a $4 \times 2 \times 3 = 24$ configuration grid. Each configuration is tested on 20 tasks, producing 480 planned trials (476 completed; 4 Llama-3.1 tasks terminated due to VRAM pressure). Experiments were conducted March 3--12, 2026, on Google Colab free-tier NVIDIA T4 GPUs ($\sim$15\,GB VRAM). The 60-task benchmark was designed in February 2026, prior to the release of Qwen-3.5-4B (March 2026); task prompts were not optimized for any specific model.
 
 The 60 prompts (20/env) are imperative, self-contained instructions with deterministically verifiable outputs. \textbf{Bash} covers directory manipulation, text pipelines (\texttt{grep}/\texttt{sed}), permissions, and archival (1--5 step pipelines). \textbf{Python} spans DSA (BST, Sieve, Levenshtein), OOP, concurrency, and I/O (10--50 lines). \textbf{Web} requires multi-hop research over a 40-entry knowledge base ($\geq$2 searches + synthesis). Complexity: $\sim$30\% single-step, $\sim$50\% 2--3 steps, $\sim$20\% 4--5 interdependent steps.
 
@@ -186,12 +186,12 @@ Gemma-3 dominates ($\overline{\text{SDM}}=0.403$, 53.3\% success [95\% binomial 
 
 \subsection{4-bit vs.\ 8-bit: Environment-Dependent Effects}
 
-Mann-Whitney $U$ tests ($n=20$ per group) reveal that quantization effects are \emph{not uniform}. In Bash, 4-bit Gemma-3 \emph{significantly outperforms} 8-bit ($\Delta\text{SDM}=+0.200$, $U=255$, $p=0.044$, rank-biserial $r=0.275$). In Python, 8-bit \emph{significantly outperforms} 4-bit ($\Delta\text{SDM}=+0.390$, $U=110.5$, $p=0.009$, $r=0.448$, a medium-to-large effect). Qwen-3.5 shows a trending Python advantage for 8-bit ($p=0.078$, $r=0.255$). All other 9 comparisons are non-significant ($p>0.10$).
+Mann-Whitney $U$ tests ($n=20$ per group) reveal that quantization effects are \emph{not uniform}. We distinguish \textbf{robust findings} (non-overlapping CIs, $p<0.05$ with medium+ effect sizes) from \textbf{suggestive trends} ($0.05 < p < 0.10$). \emph{Robust:} In Bash, 4-bit Gemma-3 \emph{significantly outperforms} 8-bit ($\Delta\text{SDM}=+0.200$, $U=255$, $p=0.044$, rank-biserial $r=0.275$). In Python, 8-bit \emph{significantly outperforms} 4-bit ($\Delta\text{SDM}=+0.390$, $U=110.5$, $p=0.009$, $r=0.448$, a medium-to-large effect). \emph{Suggestive:} Qwen-3.5 shows a trending Python advantage for 8-bit ($p=0.078$, $r=0.255$), which should be interpreted cautiously pending replication. All other 9 comparisons are non-significant ($p>0.10$).
 
 \subsection{Qualitative Failure Archetypes}
 \label{sec:qualitative}
 
-Through systematic qualitative coding of 476 traces (Section~\ref{sec:coding}), we identify four archetypes:
+Through systematic qualitative coding of 476 traces (Section~\ref{sec:coding}), we identify four archetypes (counts are approximate due to single-coder design; see Section~\ref{sec:limitations}):
 
 \paragraph{A1: Reasoning Leakage (Qwen-3.5, $n{=}58$).}
 Qwen-3.5 uses native \texttt{</think>} tags instead of prompted \texttt{<thought>} tags, creating dual-tag confusion. Under quantization, reasoning text leaks into executable blocks, producing errors like \texttt{/bin/sh: 1: The: not found}. QHR: $\overline{0.327}$, highest of all models (Fig.~\ref{fig:selfcorr_qhr}c--d).
@@ -200,7 +200,7 @@ Qwen-3.5 uses native \texttt{</think>} tags instead of prompted \texttt{<thought
 Llama-3.1 correctly identifies the first step but repeats it across all turns (e.g., \texttt{mkdir -p project/src} on all 5 turns). Self-corrections trigger $\overline{3.2}\times$/task but cannot alter the trajectory---a fundamental state-tracking failure producing a stateless agent.
 
 \paragraph{A3: Code Truncation (Gemma-3 Python, $n{=}27$).}
-Correct reasoning traces yield truncated code. On the Levenshtein task (py\_8), Gemma-3 8-bit correctly described the DP approach across 5 turns but truncated at \texttt{if s1[i - 1} three times (SyntaxError). The 8-bit variant has significantly fewer truncations ($p=0.009$), linking truncation to 4-bit's degraded long-range syntactic attention. The Actor-Critic provides within-turn repair but cannot prevent cross-turn recurrence.
+Correct reasoning traces yield truncated code. On the Levenshtein task (py\_8), Gemma-3 8-bit correctly described the DP approach across 5 turns but truncated at \texttt{if s1[i - 1} three times (SyntaxError). The 8-bit variant has significantly fewer truncations ($p=0.009$), linking truncation to 4-bit's degraded long-range syntactic attention. We note that the \texttt{max\_new\_tokens}{$=$}400 budget may also contribute to truncation on longer scripts (10--50 lines); however, the significant quantization-level difference suggests that token budget alone does not explain the effect. The Actor-Critic provides within-turn repair but cannot prevent cross-turn recurrence.
 
 \paragraph{A4: Verification Omission (Phi-4-Mini, $n{=}18$).}
 Phi-4-Mini executes correct commands but omits \texttt{[TASK\_COMPLETE]} or provides insufficient evidence for the judge. This inflates failure rates: $\sim$12\% of Phi-4-Mini rejections are false negatives.
@@ -251,7 +251,7 @@ Figure~\ref{fig:sdm_turns} directly visualizes stability decay. Gemma-3 achieves
   \label{fig:error_env}
 \end{figure}
 
-Across 335 failures: Format/Parser Errors dominate (42.7\%), followed by Max Turns Exhausted (31.6\%), Immediate Failures (9.3\%), Judge Rejected (9.3\%), and Self-Correction Loops (7.2\%). Error distributions vary systematically by model (Fig.~\ref{fig:errors}). Web Synthesis is the most forgiving environment ($\overline{\text{SDM}}=0.273$); Bash the most challenging ($\overline{\text{SDM}}=0.082$); Python occupies the middle ($\overline{\text{SDM}}=0.232$) where iterative debugging partially compensates for initial errors (Fig.~\ref{fig:env_perf}). Seven tasks achieved 0\% success across all configurations, all requiring $\geq$4 interdependent steps.
+Across 335 failures: Format/Parser Errors dominate (42.7\%), followed by Max Turns Exhausted (31.6\%), Immediate Failures (9.3\%), Judge Rejected (9.3\%), and Self-Correction Loops (7.2\%). Error distributions vary systematically by model (Fig.~\ref{fig:errors}). Web Synthesis is the most forgiving environment ($\overline{\text{SDM}}=0.273$); Bash the most challenging ($\overline{\text{SDM}}=0.082$); Python occupies the middle ($\overline{\text{SDM}}=0.232$) where iterative debugging partially compensates for initial errors (Fig.~\ref{fig:env_perf}). Note that Web retains the full trajectory context while Bash and Python use a 2-turn sliding window (Section~\ref{sec:limitations}), which may partially contribute to Web's higher SDM independent of task difficulty. Seven tasks achieved 0\% success across all configurations, all requiring $\geq$4 interdependent steps.
 
 % ============================================================
 \section{Discussion}
