@@ -257,7 +257,24 @@ Across 335 failures: Format/Parser Errors dominate (42.7\%), followed by Max Tur
 % ============================================================
 
 \paragraph{Multi-Step Reasoning as a Composite Capability.}
-Our qualitative analysis reveals that agentic reasoning is not monolithic but comprises four independently degradable sub-capabilities: (i)~\emph{plan decomposition}; (ii)~\emph{state tracking}; (iii)~\emph{format adherence}; (iv)~\emph{completion signaling}~\cite{wang2024survey,xi2023rise}. Qwen-3.5 excels at (i) but fails at (iii); Llama-3.1 fails entirely at (ii); Gemma-3 maintains all four consistently; Phi-4-Mini fails at (iv).
+Our qualitative analysis reveals that agentic reasoning is not monolithic but comprises four independently degradable sub-capabilities: (i)~\emph{plan decomposition}; (ii)~\emph{state tracking}; (iii)~\emph{format adherence}; (iv)~\emph{completion signaling}~\cite{wang2024survey,xi2023rise}. Qwen-3.5 excels at (i) but fails at (iii); Llama-3.1 fails entirely at (ii); Gemma-3 maintains all four consistently; Phi-4-Mini fails at (iv). Table~\ref{tab:arch_failure} maps each model's dominant failure to its architectural root cause and a targeted, deployable mitigation.
+
+\begin{table}[h]
+\caption{Architecture--failure--mitigation mapping. Each model's dominant failure archetype is traced to a specific architectural component, yielding targeted interventions deployable without model retraining.}
+\label{tab:arch_failure}
+\centering
+\small
+\begin{tabular}{@{}llll@{}}
+\toprule
+Model & Failed Sub-Capability & Root Cause & Mitigation \\
+\midrule
+Qwen-3.5 & Format Adherence & Native \texttt{</think>} conflicts with \texttt{<thought>} & Output sanitization \\
+Llama-3.1 & State Tracking & TOON compression loses early context & Explicit state summaries \\
+Gemma-3 & Code Generation & 400-token budget truncates long scripts & Dynamic token budgeting \\
+Phi-4-Mini & Completion Signaling & No explicit \texttt{[TASK\_COMPLETE]} requirement & Add completion prompt \\
+\bottomrule
+\end{tabular}
+\end{table}
 
 \paragraph{Agentic Competence Hierarchy.}
 Based on our data, we propose three tiers (defined by success rate $ > 50\%$, $30$--$50\%$, and $< 5\%$ respectively):
