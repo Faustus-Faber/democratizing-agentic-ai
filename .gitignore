@@ -18,6 +18,7 @@ temp_script.py
 *.lof
 *.lot
 *.blg
+*.bbl
 
 # OS files
 .DS_Store
