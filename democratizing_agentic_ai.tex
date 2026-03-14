@@ -36,7 +36,7 @@
 \maketitle
 
 \begin{abstract}
-We present the first systematic evaluation of multi-turn recursive stability in quantized Small Language Models (SLMs) operating as autonomous agents on resource-constrained hardware. We test four SLMs---Gemma-3-4B, Llama-3.1-8B, Phi-4-Mini, and Qwen-3.5-4B---under 4-bit NF4 and 8-bit INT8 quantization on a 15\,GB VRAM Google Colab T4 GPU. Across 476 agentic tasks spanning Bash administration, Python debugging, and multi-hop Web synthesis, we introduce two novel evaluation metrics: the \textbf{Stability Decay Metric (SDM)}, which penalizes multi-turn inefficiency, and the \textbf{Quantization-Hallucination Ratio (QHR)}, which isolates structural formatting failures from logical reasoning errors. Our results reveal that (i)~Gemma-3-4B achieves the highest agentic stability ($\overline{\text{SDM}}=0.403$, success rate $53.3\%$), while Llama-3.1-8B fails catastrophically ($0.86\%$ success) due to persistent single-step repetition loops; (ii)~the effect of quantization precision is \emph{environment-dependent}: 4-bit significantly outperforms 8-bit in Bash ($p=0.044$), while 8-bit significantly outperforms 4-bit in Python ($p=0.009$); and (iii)~format/parser errors, not logical reasoning failures, constitute the dominant failure mode ($42.7\%$). Through qualitative analysis of 476 reasoning traces, we identify four distinct failure archetypes---\emph{reasoning leakage}, \emph{single-step stagnation}, \emph{code truncation}, and \emph{verification omission}---providing actionable deployment guidelines for quantized SLM agents on edge hardware. Code and data: \texttt{[redacted for review]}.
+We present the first systematic evaluation of multi-turn recursive stability in quantized Small Language Models (SLMs) operating as autonomous agents on resource-constrained hardware. We test four SLMs---Gemma-3-4B, Llama-3.1-8B, Phi-4-Mini, and Qwen-3.5-4B---under 4-bit NF4 and 8-bit INT8 quantization on a 15\,GB VRAM Google Colab T4 GPU. Across 476 agentic tasks spanning Bash administration, Python debugging, and multi-hop Web synthesis, we introduce two novel evaluation metrics: the \textbf{Stability Decay Metric (SDM)}, which penalizes multi-turn inefficiency, and the \textbf{Quantization-Hallucination Ratio (QHR)}, which isolates structural formatting failures from logical reasoning errors. Our results reveal that (i)~Gemma-3-4B achieves the highest agentic stability ($\overline{\text{SDM}}=0.403$, success rate $53.3\%$ [95\% CI: 43.8, 62.6]), while Llama-3.1-8B fails catastrophically ($0.86\%$ [0.02, 4.71] success) due to persistent single-step repetition loops; (ii)~the effect of quantization precision is \emph{environment-dependent}: 4-bit significantly outperforms 8-bit in Bash ($p=0.044$), while 8-bit significantly outperforms 4-bit in Python ($p=0.009$); and (iii)~format/parser errors, not logical reasoning failures, constitute the dominant failure mode ($42.7\%$). Through qualitative analysis of 476 reasoning traces, we identify four distinct failure archetypes---\emph{reasoning leakage}, \emph{single-step stagnation}, \emph{code truncation}, and \emph{verification omission}---providing actionable deployment guidelines for quantized SLM agents on edge hardware. Code and data: \texttt{[redacted for review]}.
 \end{abstract}
 
 % ============================================================
@@ -52,6 +52,7 @@ However, deploying SLMs as \emph{autonomous agents}---where the model must maint
   \item We introduce the \textbf{Stability Decay Metric (SDM)} and \textbf{Quantization-Hallucination Ratio (QHR)} to disentangle agentic efficiency from structural formatting integrity.
   \item We conduct the first systematic evaluation of \textbf{multi-turn recursive stability} in quantized SLM agents across \textbf{4 models $\times$ 2 precisions $\times$ 3 environments $\times$ 20 tasks = 480 experimental configurations} (476 completed), identifying statistically significant, environment-dependent quantization effects.
   \item Through qualitative trace analysis, we identify \textbf{four failure archetypes} specific to quantized agentic SLMs, providing actionable deployment guidelines.
+  \item We propose \textbf{Agentic Sub-Capability Decomposition (ASCD)}, a framework decomposing multi-step agentic reasoning into four independently degradable sub-capabilities---plan decomposition, state tracking, format adherence, and completion signaling---enabling targeted diagnosis and mitigation.
 \end{enumerate}
 
 % ============================================================
@@ -91,7 +92,7 @@ We implement a ReAct-style~\cite{yao2022react} recursive loop ($D_{\max}{=}5$ tu
 
 Table~\ref{tab:models} summarizes the four SLMs evaluated. All configurations fit within the 15\,GB T4 VRAM constraint, with 4-bit achieving $1.5$--$2\times$ VRAM reduction.
 
-\begin{table}[h]
+\begin{table}[ht]
 \caption{Model roster with measured VRAM allocations under each quantization level.}
 \label{tab:models}
 \centering
@@ -336,7 +337,7 @@ This paper provides the first systematic evaluation of multi-turn recursive stab
   \item \textbf{Format adherence is the primary bottleneck:} 42.7\% of failures stem from parser/format errors rather than logical reasoning failures, suggesting that post-processing and output sanitization may be more impactful than precision upgrades.
 \end{itemize}
 
-We release our evaluation harness, all 476 reasoning traces, and the combined dataset to support future research in quantized agentic AI on edge hardware.
+We release our evaluation harness, all 476 reasoning traces, and the combined dataset to support future research in quantized agentic AI on edge hardware. Future work should prioritize multi-seed replication to narrow confidence intervals, extend $D_{\max}$ to 10--20 turns for long-horizon stability analysis, and validate findings across alternative quantization methods (AWQ, GPTQ) and hardware platforms.
 
 \begin{ack}
 We thank the open-source teams behind Qwen, Llama, Gemma, and Phi, the \texttt{bitsandbytes} and HuggingFace communities, and Google Colab for free GPU access. \textbf{Reproducibility:} All experiments used Colab free-tier T4 GPUs, March 3--12, 2026. The harness, 24 trace files, and dataset (476$\times$16) are at the project repository (redacted). \textbf{AI Disclosure:} AI-assisted tools were used for LaTeX formatting, code analysis, and iterative manuscript refinement; all experimental design, data collection, qualitative coding, and scientific interpretation were performed by the author.
