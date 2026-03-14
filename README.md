@@ -141,17 +141,13 @@ python qualitative_analysis.py --results-dir ../Results --output report.csv
 
 ### Stability Decay Metric (SDM)
 
-```
-SDM = I_success × (1 − (T − 1) / D_max)
-```
+$$\text{SDM} = \mathbb{I}_{success} \times \left(1 - \frac{T - 1}{D_{max}}\right)$$
 
-Where `I_success = 1` if task solved (validated by LLM-as-a-Judge), `T` = turns used, `D_max = 5`. Penalizes multi-turn inefficiency: **1.0** = solved in 1 turn, **0.0** = failed.
+Penalizes multi-turn inefficiency: **1.0** = solved in 1 turn, **0.0** = failed. $\mathbb{I}_{success} = 1$ if task solved (validated by LLM-as-a-Judge), $T$ = turns used, $D_{max} = 5$.
 
 ### Quantization-Hallucination Ratio (QHR)
 
-```
-QHR = (Σ parser_errors from t=1..T) / T
-```
+$$\text{QHR} = \frac{\sum_{t=1}^{T} \mathbb{I}_{parse\ error}(t)}{T}$$
 
 Isolates structural formatting failures from logical reasoning errors.
 
